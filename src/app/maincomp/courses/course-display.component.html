@@ -1,0 +1,45 @@
+  <!-- Start Page Content -->
+  <div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+      <h3 class="text-primary">Course</h3> </div>
+    <div class="col-md-7 align-self-center">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+        <li class="breadcrumb-item active">Course</li>
+      </ol>
+    </div>
+  </div>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Course</h4>
+          <h6 class="card-subtitle">All Courses</h6>
+          <div class="table-responsive m-t-40">
+            <table id="myTable" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th class="table-col">ID</th>
+                <th class="table-col">COURSE</th>
+                <th class="table-col">VIEW BATCHES</th>
+                <th class="table-col">ADD BATCH</th>
+
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let course of courses">
+                <td class="table-col">{{course.id}}</td>
+                <td class="table-col">{{course.name}}</td>
+                <td class="table-col"><a class="button" href="#" [queryParams]="{ coursename: course.name }" [routerLink]="['/courses/batch',course.id]">VIEW BATCH</a></td>
+                <td class="table-col"><a class="button" href="#" [queryParams]="{ coursename: course.name }" [routerLink]="['/courses/batch/batchadd',course.id]">ADD BATCH</a></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End PAge Content -->
+  </div>

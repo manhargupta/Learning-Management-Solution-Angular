@@ -1,0 +1,27 @@
+<!-- Preloader - style you can find in spinners.css -->
+<div class="preloader">
+  <svg class="circular" viewBox="25 25 50 50">
+    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+</div>
+<!-- Main wrapper  -->
+<div id="main-wrapper">
+  <!-- header header  -->
+  <div class="header">
+    <app-top-panel></app-top-panel>
+  </div>
+  <!-- End header header -->
+  <!-- Left Sidebar  -->
+  <app-left-panel></app-left-panel>
+  <!-- End Left Sidebar  -->
+  <!-- Page wrapper  -->
+  <div class="page-wrapper">
+    <!-- Container fluid  -->
+    <router-outlet></router-outlet>
+    <!-- End Container fluid  -->
+    <!-- footer -->
+    <footer class="footer"> © 2018 All rights reserved. Designed by Manhar Gupta in Angular</footer>
+    <!-- End footer -->
+  </div>
+  <!-- End Page wrapper  -->
+</div>
+

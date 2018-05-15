@@ -1,0 +1,41 @@
+<div class="left-sidebar">
+  <!-- Sidebar scroll-->
+  <div class="scroll-sidebar">
+    <!-- Sidebar navigation-->
+    <nav class="sidebar-nav">
+      <ul id="sidebarnav">
+        <li class="nav-devider"></li>
+        <li class="nav-label">Home</li>
+        <li> <a class="has-arrow  " href="#" [routerLink]="['/']" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard </span></a>
+        </li>
+        <li class="nav-label">Services</li>
+        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Course</span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="#" [routerLink]="['/courses']">All Courses</a></li>
+            <li><a href="#" [routerLink]="['/courses/coursesadd']">Add New Course</a></li>
+          </ul>
+        </li>
+        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Students</span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="#" [routerLink]="['/student']">All Students</a></li>
+            <li><a href="#" [routerLink]="['/student/studentadd']">Add New Student</a></li>
+          </ul>
+        </li>
+        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Subjects</span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="#" [routerLink]="['/subject']">All Subjects</a></li>
+            <li><a href="#" [routerLink]="['/subject/subjectadd']">Add New Subject</a></li>
+          </ul>
+        </li>
+        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Teachers</span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="#" [routerLink]="['/teacher']">All Teachers</a></li>
+            <li><a href="#" [routerLink]="['/teacher/teacheradd']">Add New Teacher</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- End Sidebar navigation -->
+  </div>
+  <!-- End Sidebar scroll-->
+</div>

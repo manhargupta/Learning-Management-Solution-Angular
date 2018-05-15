@@ -1,0 +1,42 @@
+<!-- Start Page Content -->
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">Student ({{studentname}})</h3> </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+      <li class="breadcrumb-item active">Student</li>
+      <li class="breadcrumb-item active">Search</li>
+
+    </ol>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Student</h4>
+          <h6 class="card-subtitle">Search Student</h6>
+          <div class="table-responsive m-t-40">
+            <table id="myTable" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th class="table-col">ID</th>
+                <th class="table-col">BATCH NAME</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let student of studentsBatch; let id=index">
+                <td class="table-col">{{id+1}}</td>
+                <td class="table-col">{{student.name}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End PAge Content -->
+</div>

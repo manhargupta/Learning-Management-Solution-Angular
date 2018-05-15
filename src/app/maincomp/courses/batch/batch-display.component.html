@@ -1,0 +1,52 @@
+<!-- Start Page Content -->
+<div class="row page-titles">
+  <div class="col-md-5 align-self-center">
+    <h3 class="text-primary">Course ({{coursename}})</h3> </div>
+  <div class="col-md-7 align-self-center">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+      <li class="breadcrumb-item active">Course</li>
+      <li class="breadcrumb-item active">Batch</li>
+    </ol>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Batch</h4>
+          <h6 class="card-subtitle">All Batches</h6>
+          <div class="table-responsive m-t-40">
+            <table id="myTable" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th class="table-col">ID</th>
+                <th class="table-col">Batch</th>
+                <th class="table-col">Course</th>
+                <th class="table-col">View Lecture</th>
+                <th class="table-col">Add Lecture</th>
+                <th class="table-col">View Students</th>
+                <th class="table-col">Add Students</th>
+
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let batch of batch; let id=index">
+                <td class="table-col"><a href="#" [routerLink]="['/courses/batch',batch.id]">{{id+1}}</a></td>
+                <td class="table-col">{{batch.name}}</td>
+                <td class="table-col">{{batch.course.name}}</td>
+                <td class="table-col"><a class="button" href="#" [queryParams]="{ course: batch.course.name,batch:batch.name}" [routerLink]="['/courses/batch/lecture',batch.course.id,batch.id]">VIEW LECTURE</a></td>
+                <td class="table-col"><a class="button" href="#" [queryParams]="{ course: batch.course.name,batch:batch.name}" [routerLink]="['/courses/batch/lecture/lectureadd',batch.course.id,batch.id]">ADD LECTURE</a></td>
+                <td class="table-col"><a class="button" href="#" [queryParams]="{ course: batch.course.name,batch:batch.name}" [routerLink]="['/courses/batch/student',batch.course.id,batch.id]">VIEW STUDENTS</a></td>
+                <td class="table-col"><a class="button" href="#" [queryParams]="{ course: batch.course.name,batch:batch.name}" [routerLink]="['/courses/batch/student/studentadd',batch.course.id,batch.id]">ADD STUDENTS</a></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End PAge Content -->
+</div>
