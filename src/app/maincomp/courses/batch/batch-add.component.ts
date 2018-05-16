@@ -19,9 +19,10 @@ export class BatchAddComponent implements OnInit {
     this.route.queryParams.subscribe(q=>this.coursename=q.coursename)
   }
   @ViewChild('batchname') batchname:ElementRef
-  addNewBatch(batchname){
+  addNewBatch(batchname,batchdate){
     let batch = {
-      'name':batchname
+      'name':batchname,
+      'batchdate':batchdate
     }
     this.courseService.addBatch(batch,+this.route.snapshot.paramMap.get('id'))
       .subscribe((batch:IBatch) => {

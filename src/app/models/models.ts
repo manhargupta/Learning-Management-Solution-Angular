@@ -6,6 +6,7 @@ export interface ICourse{
 export interface IBatch{
   id:number,
   name:string,
+  batchdate:string
 }
 
 export interface ISubject{

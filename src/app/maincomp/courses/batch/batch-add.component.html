@@ -25,7 +25,13 @@
                 <input type="text" class="form-control" id="batchname" placeholder="Batch Name" #batchname>
               </div>
             </div>
-            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="addNewBatch(batchname.value)">Submit</button>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="control-label">Batch Start Date</label>
+                <input type="date" class="form-control" placeholder="dd/mm/yyyy" #batchdate>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="addNewBatch(batchname.value,batchdate.value)">Submit</button>
           </form>
         </div>
       </div>

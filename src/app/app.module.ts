@@ -55,7 +55,7 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path:"",component:CourseDisplayComponent},
+      {path:"",component:DashboardComponent},
       {path:"courses",component:CourseDisplayComponent},
       {path:"courses/coursesadd",component:CourseAddComponent},
 

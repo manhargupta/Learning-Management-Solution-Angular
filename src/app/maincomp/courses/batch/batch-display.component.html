@@ -24,6 +24,7 @@
                 <th class="table-col">ID</th>
                 <th class="table-col">Batch</th>
                 <th class="table-col">Course</th>
+                <th class="table-col">Start Date</th>
                 <th class="table-col">View Lecture</th>
                 <th class="table-col">Add Lecture</th>
                 <th class="table-col">View Students</th>
@@ -36,6 +37,7 @@
                 <td class="table-col"><a href="#" [routerLink]="['/courses/batch',batch.id]">{{id+1}}</a></td>
                 <td class="table-col">{{batch.name}}</td>
                 <td class="table-col">{{batch.course.name}}</td>
+                <td class="table-col">{{batch.batchdate | date}}</td>
                 <td class="table-col"><a class="button" href="#" [queryParams]="{ course: batch.course.name,batch:batch.name}" [routerLink]="['/courses/batch/lecture',batch.course.id,batch.id]">VIEW LECTURE</a></td>
                 <td class="table-col"><a class="button" href="#" [queryParams]="{ course: batch.course.name,batch:batch.name}" [routerLink]="['/courses/batch/lecture/lectureadd',batch.course.id,batch.id]">ADD LECTURE</a></td>
                 <td class="table-col"><a class="button" href="#" [queryParams]="{ course: batch.course.name,batch:batch.name}" [routerLink]="['/courses/batch/student',batch.course.id,batch.id]">VIEW STUDENTS</a></td>

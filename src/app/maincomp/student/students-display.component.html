@@ -16,6 +16,10 @@
         <div class="card-body">
           <h4 class="card-title">Student</h4>
           <h6 class="card-subtitle">All Student</h6>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="ti-search"></i></div>
+            <input type="text" class="form-control" id="search" placeholder="Search By ID" #search (keyup)="filterStudents(search.value)">
+          </div>
           <div class="table-responsive m-t-40">
             <table id="myTable" class="table table-bordered table-striped">
               <thead>
@@ -27,8 +31,8 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let student of students; let id=index">
-                <td class="table-col">{{id+1}}</td>
+              <tr *ngFor="let student of students;">
+                <td class="table-col">{{student.id}}</td>
                 <td class="table-col">{{student.name}}</td>
                 <td class="table-col"><a class="button" href="#" [queryParams]="{ studentname: student.name }" [routerLink]="['/student/studentadd/batches/',student.id]">VIEW BATCHES</a></td>
                 <td class="table-col"><a class="button" href="#" [queryParams]="{ studentname: student.name }" [routerLink]="['/student/studentadd/addbatch/',student.id]">ADD BATCHES</a></td>
