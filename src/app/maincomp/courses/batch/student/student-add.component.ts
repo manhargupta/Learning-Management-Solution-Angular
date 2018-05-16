@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {IBatch, IStudent} from "../../../../models/models";
 import {ActivatedRoute} from "@angular/router";
 import {CourseService} from "../../../../services/courses/course.service";
-
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 @Component({
   selector: 'app-student-add',
   templateUrl: './student-add.component.html',

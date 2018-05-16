@@ -1,7 +1,9 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ICourse, ISubject} from "../../models/models";
 import {CourseService} from "../../services/courses/course.service";
-
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 @Component({
   selector: 'app-subject-add',
   templateUrl: './subject-add.component.html',

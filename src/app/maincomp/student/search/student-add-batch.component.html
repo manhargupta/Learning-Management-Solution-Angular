@@ -19,6 +19,15 @@
           <h4 class="card-title">Add Batch</h4>
           <form class="form p-t-20">
             <div class="form-group">
+              <label>Course</label>
+              <div class="col-md-12">
+                <select class="form-control custom-select" #cour (change)="getBatch(cour.value)">
+                  <option value="-1">Select:</option>
+                  <option *ngFor="let course of courses"  [value]="course.id">{{course.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
               <label>Batch</label>
               <div class="col-md-12">
                 <select class="form-control custom-select" #batch>

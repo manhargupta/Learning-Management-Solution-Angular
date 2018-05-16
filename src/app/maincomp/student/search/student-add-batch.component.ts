@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {IBatch, IStudent} from "../../../models/models";
+import {IBatch, ICourse, IStudent} from "../../../models/models";
 import {ActivatedRoute} from "@angular/router";
 import {CourseService} from "../../../services/courses/course.service";
-
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
+const swal: SweetAlert = _swal as any;
 @Component({
   selector: 'app-student-add-batch',
   templateUrl: './student-add-batch.component.html',
@@ -11,6 +13,7 @@ import {CourseService} from "../../../services/courses/course.service";
 export class StudentAddBatchComponent implements OnInit {
   studentname:string
   batches:IBatch[]
+  courses:ICourse[]
   id:number
   constructor(private _route:ActivatedRoute, private studentService:CourseService) {
     this.batches=[]
@@ -18,9 +21,11 @@ export class StudentAddBatchComponent implements OnInit {
   }
   ngOnInit() {
     this.id= +this._route.snapshot.paramMap.get('id')
-    this.studentService.getAllBatch()
-      .subscribe((batches:any)=>{
-        this.batches=batches;
+
+    this.studentService.getCourse()
+      .subscribe((course:ICourse[])=>{
+        console.log(course)
+        this.courses=course;
       })
   }
   addBatch(bid:number,cid:number){
@@ -29,6 +34,18 @@ export class StudentAddBatchComponent implements OnInit {
         swal("Success", "Student Added Successfully in Batch");
       });
 
+  }
+
+  getBatch(cid:number){
+    if(cid==-1){
+      swal("Error", "Please Select a course");
+      this.batches=[]
+      return;
+    }
+    this.studentService.getBatch(cid)
+      .subscribe((batches:any)=>{
+        this.batches=batches;
+      })
   }
 
 }
