@@ -22,12 +22,14 @@
               <tr>
                 <th class="table-col">ID</th>
                 <th class="table-col">NAME</th>
+                <th class="table-col">SUBJECT</th>
               </tr>
               </thead>
               <tbody>
               <tr *ngFor="let teacher of teachers; let id=index">
                 <td class="table-col">{{id+1}}</td>
                 <td class="table-col">{{teacher.name}}</td>
+                <td class="table-col">{{teacher.subjects[0].name}}</td>
               </tr>
               </tbody>
             </table>
